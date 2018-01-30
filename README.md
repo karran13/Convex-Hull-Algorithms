@@ -14,6 +14,7 @@ In this case, the convex hull is found to be a convex polygon made up of a set o
 3. Andrew's Algorithm
 
 Graham's Scan
+
 This algorithm is based on traversing the set of points starting from the lowermost leftmost point in an order sorted by the angle it makes with the rest of the points, and classifying the angles of the turns we make going to the next point as left turns or right turns, to ensure the convexity of the polygon we're forming.
 
 Method:
@@ -39,6 +40,7 @@ Theoretical time analysis
 Sorting the points has a time complexity of O(nlogn), and our left turn/right turn stack traversal has a complexity of O(n), as each point can be encountered a maximum of twice. One for it's first go and second if it needs to be removed from the stack. So the overall time complexity, theoretically is O(nlogn)
 
 Jarvis March
+
 This algorithm starts with the leftmost lowermost point, say P, and in it's next iterative step searches for a point P' such that the line PP' is to the left of all the other points in the set, this process is repeated till we reach the initial point again.
 
 Method: 
@@ -54,6 +56,7 @@ Theoretical time analysis
 The angle check step is for all the points in the set, meaning n points and this angle check gets repeated for as many as the number of points on the hull, say h. So theoretically, our time complexity is O(nh). Meaning that this would perform better than O(nlogn) algorithms only if the number of points h, on the hull is less than logn.
 
 Andrew's Algorithm
+
 This algorithm is based on sorting the given set of points by their x co-ordinates (in case of tie, by y co-ordinate) and then constructing the upper and lower hulls of the required convex hull. 
 
 Method: 
