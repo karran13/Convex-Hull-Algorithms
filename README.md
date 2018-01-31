@@ -1,7 +1,7 @@
 # Convex-Hull-Algorithms
 Three algorithms to find the convex hull of a set of points: Graham Scan, Jarvis March, Andrew's Algorithm
 
-Introduction
+**Introduction**
 
 A Convex Hull of a set of points, say X, is defined as the smallest convex set that contains X. 
 Finding the convex hull of a set of points is one of the most fundamental problems of computational geometry that finds its applications in numerous places.The algorithms we are going to analyze, deal with the planar case, where in we have a finite set of points in the same plane. 
@@ -13,11 +13,11 @@ In this case, the convex hull is found to be a convex polygon made up of a set o
 
 3. Andrew's Algorithm
 
-Graham's Scan
+**Graham's Scan**
 
 This algorithm is based on traversing the set of points starting from the lowermost leftmost point in an order sorted by the angle it makes with the rest of the points, and classifying the angles of the turns we make going to the next point as left turns or right turns, to ensure the convexity of the polygon we're forming.
 
-Method:
+**Method:**
 
 Step 1: We find the lowermost leftmost point, let it be P.
 
@@ -35,15 +35,15 @@ Deciding whether it is a left turn or a right turn between three points, say P1,
 
 Step 4: The process eventually returns to the point at which it started, at which point the algorithm is completed and the stack now contains the points of the convex hull in counter clockwise order.
 
-Theoretical time analysis 
+**Theoretical time analysis**
 
 Sorting the points has a time complexity of O(nlogn), and our left turn/right turn stack traversal has a complexity of O(n), as each point can be encountered a maximum of twice. One for it's first go and second if it needs to be removed from the stack. So the overall time complexity, theoretically is O(nlogn)
 
-Jarvis March
+**Jarvis March**
 
 This algorithm starts with the leftmost lowermost point, say P, and in it's next iterative step searches for a point P' such that the line PP' is to the left of all the other points in the set, this process is repeated till we reach the initial point again.
 
-Method: 
+**Method:** 
 
 1. After finding our initial point(Leftmost, lowermost) the algorithm uses the angles all the remaining points make with the current point to find the next suitable point.
 
@@ -51,15 +51,15 @@ Method:
 
 3. The same step is repeated for the remaining points, till the convex hull is formed. 
 
-Theoretical time analysis 
+**Theoretical time analysis** 
 
 The angle check step is for all the points in the set, meaning n points and this angle check gets repeated for as many as the number of points on the hull, say h. So theoretically, our time complexity is O(nh). Meaning that this would perform better than O(nlogn) algorithms only if the number of points h, on the hull is less than logn.
 
-Andrew's Algorithm
+**Andrew's Algorithm**
 
 This algorithm is based on sorting the given set of points by their x co-ordinates (in case of tie, by y co-ordinate) and then constructing the upper and lower hulls of the required convex hull. 
 
-Method: 
+**Method:** 
 
 1. After sorting the points as mentioned, to construct the upper and lower hull we use a simple condition. Let U and L be the sets denoting Upper Hull and Lower Hull respectively, then 
 
@@ -71,7 +71,7 @@ Method:
 
 5. Finally we just remove the common point from U and L and we have our required convex hull. 
 
-Theoretical time analysis 
+**Theoretical time analysis** 
 
 Sorting the points take O(nlogn) time, while the traversal is just O(n), since again a point can be encountered a maximum of two times, first in adding it into U or L and second in removing it from U or L. So theoretically, the overall time complexity is O(nlogn), for the algorithm.
 
