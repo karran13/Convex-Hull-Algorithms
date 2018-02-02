@@ -79,9 +79,9 @@ Sorting the points take O(nlogn) time, while the traversal is just O(n), since a
 
 The three algorithms are run on a number of inputs and outputs are generated. A visualization platform is used to visualize the convex hull given a set of points. The following figures show the outputs of the algorithms when the input given is 50, 500 and 5000 randomly generated points on all the three algorithms.
 
-![Alt text](relative/path/to/50.png?raw=true "Title")
-![Alt text](relative/path/to/500.png?raw=true "Title")
-![Alt text](relative/path/to/5000.png?raw=true "Title")
+![Alt text](50.PNG?raw=true "Title")
+![Alt text](500.png?raw=true "Title")
+![Alt text](5000.PNG?raw=true "Title")
 
 The algorithm is run on inputs of sizes from 10 to 100000 and the time analysis graphs have been plotted.
 
@@ -89,7 +89,7 @@ Andrew's Algorithm is represented by the red curve.
 Graham's Algorithm is represented by the green curve. 
 Jarvis' algorithm is represented by the blue curve. 
 
-![Alt text](relative/path/to/time.png?raw=true "Title")
+![Alt text](time.png?raw=true "Title")
 
 As expected from the theoretical time analysis, Andrews algorithm takes the highest time and Jarvis takes the lowest time as Jarvis is Output Sensitive.
 
